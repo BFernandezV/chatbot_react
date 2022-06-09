@@ -1,0 +1,38 @@
+.bodyNavBar {
+  background-color: #1f2029;
+  height: 100px;
+}
+
+.bodyChat {
+  background-color: #17181f;
+  height: 650px;
+}
+
+.bodyInput {
+  background-color: #1f2029;
+}
+
+.bodyInput__input {
+  background-color: #1f2029;
+  border: 0;
+  color: #fff !important;
+  box-shadow: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.bodyInput__input:focus {
+  background-color: #17181f;
+  box-shadow: #1f2029 0px 7px 29px 0px;
+}
+
+.bodyInput__img {
+  padding: 1%;
+  width: 5.3%;
+  transition: padding 0.3s ease-in-out;
+  background-color: #2a2b34;
+  border-radius: 50%;
+}
+
+.bodyInput__img:active {
+  background-color: #33343f;
+}
