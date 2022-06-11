@@ -1,115 +1,82 @@
-version:
-  "3.1"
-
-  # cómo los usuarios van a realizar la pregunta
-  # la potencial intención de los usuarios
+version: "3.1"
 nlu:
-  - intent: greet
-    examples: |
-      - chapulin
-      - Hello, my name is [credit card account]("entity": "account")
-      - [Nombre_input](entity_name)
-      - hey
-      - hello
-      - hi
-      - hello there
-      - good morning
-      - good evening
-      - moin
-      - hey there
-      - let's go
-      - hey dude
-      - goodmorning
-      - goodevening
-      - good afternoon
-
-  - intent: goodbye
-    examples: |
-      - cu
-      - good by
-      - cee you later
-      - good night
-      - bye
-      - goodbye
-      - have a nice day
-      - see you around
-      - bye bye
-      - see you later
-
-  - intent: inform
-    examples: |
-      - [Concepcion] (location) 
-      - [Chiloe] (location)
-      - [Antofagasta] (location)
-      - [Puerto Varas] (location)
-      - [Osorno] (location)
-      - [Los Leones] (location)
-      - [San Francisco] (location)
-  - intent: search_provider
-    examples: |
-      - I need a [hospital] (facility_type)
-      - find me a nearby [hospital] (facility_type)
-      - show me home health [agencies]  (facility_type)
-      - [hospital](facility_type) 
-      - find me a nearby hospital in [San Francisco] (location)
-      - I need a home health agency
-
-  - intent: affirm
-    examples: |
-      - yes
-      - y
-      - indeed
-      - of course
-      - that sounds good
-      - correct
-
-  - intent: deny
-    examples: |
-      - no
-      - n
-      - never
-      - I don't think so
-      - don't like that
-      - no way
-      - not really
-
-  - intent: mood_great
-    examples: |
-      - perfect
-      - great
-      - amazing
-      - feeling like a king
-      - wonderful
-      - I am feeling very good
-      - I am great
-      - I am amazing
-      - I am going to save the world
-      - super stoked
-      - extremely good
-      - so so perfect
-      - so good
-      - so perfect
-
-  - intent: mood_unhappy
-    examples: |
-      - my day was horrible
-      - I am sad
-      - I don't feel very well
-      - I am disappointed
-      - super sad
-      - I'm so sad
-      - sad
-      - very sad
-      - unhappy
-      - not good
-      - not very good
-      - extremly sad
-      - so saad
-      - so sad
-
   - intent: bot_challenge
     examples: |
       - are you a bot?
       - are you a human?
       - am I talking to a bot?
       - am I talking to a human?
+
+  - intent: greet
+    examples: |
+      - hey
+      - hello
+      - hi
+      - good morning
+      - good evening
+      - hey there
+
+  - intent: goodbye
+    examples: |
+      - bye
+      - goodbye
+      - see you around
+      - see you later
+
+  - intent: query_knowledge_base
+    examples: |
+      - what [restaurants]{"entity": "object_type", "value": "restaurant"} can you recommend?
+      - list some [restaurants]{"entity": "object_type", "value": "restaurant"}
+      - can you name some [restaurants]{"entity": "object_type", "value": "restaurant"} please?
+      - can you show me some [restaurant]{"entity": "object_type", "value": "restaurant"} options
+      - list [German]{"entity": "cuisine"} [restaurants]{"entity": "object_type", "value": "restaurant"}
+      - do you have any [mexican]{"entity": "cuisine"} [restaurants]{"entity": "object_type", "value": "restaurant"}?
+      - do you know the [price range]{"entity": "attribute", "value": "price-range"} of [that one]{"entity": "mention"}?
+      - what [cuisine]{"entity": "attribute"} is [it]{"entity": "mention"}?
+      - do you know what [cuisine]{"entity": "attribute"} the [last one]{"entity": "mention", "value": "LAST"} has?
+      - does [Donath]{"entity": "restaurant"} have [outside seating]{"entity": "attribute", "value": "outside-seating"}?
+      - what is the [price range]{"entity": "attribute", "value": "price-range"} of [Berlin Burrito Company]{"entity": "restaurant"}?
+      - what is with [I due forni]{"entity": "restaurant"}?
+      - Do you also have any [Vietnamese]{"entity": "cuisine"} [restaurants]{"entity": "object_type", "value": "restaurant"}?
+      - What about any [Mexican]{"entity": "cuisine", "value": "mexican"} [restaurants]{"entity": "object_type", "value": "restaurant"}?
+      - Do you also know some [Italian]{"entity": "cuisine"} [restaurants]{"entity": "object_type", "value": "restaurant"}?
+      - can you tell me the [price range]{"entity": "attribute", "value": "price-range"} of [that restaurant]{"entity": "mention"}?
+      - what [cuisine]{"entity": "attribute"} do [they]{"entity": "mention"} have?
+      - what [hotels]{"entity": "object_type", "value": "hotel"} can you recommend?
+      - please list some [hotels]{"entity": "object_type", "value": "hotel"} in [Frankfurt am Main]{"entity": "city"} for me
+      - what [hotels]{"entity": "object_type", "value": "hotel"} do you know in [Berlin]{"entity": "city"}?
+      - name some [hotels]{"entity": "object_type", "value": "hotel"} in [Berlin]{"entity": "city"}
+      - show me some [hotels]{"entity": "object_type", "value": "hotel"}
+      - what are [hotels]{"entity": "object_type", "value": "hotel"} in [Berlin]{"entity": "city"}
+      - does the [last]{"entity": "mention", "value": "LAST"} one offer [breakfast]{"entity": "attribute", "value": "breakfast-included"}?
+      - does the [second one]{"entity": "mention", "value": "2"} [include breakfast]{"entity": "attribute", "value": "breakfast-included"}?
+      - what is the [price range]{"entity": "attribute", "value": "price-range"} of the [second]{"entity": "mention", "value": "2"} hotel?
+      - does the [first]{"entity": "mention", "value": "1"} one have [wifi]{"entity": "attribute", "value": "free-wifi"}?
+      - does the [third]{"entity": "mention", "value": "3"} one have a [swimming pool]{"entity": "attribute", "value": "swimming-pool"}?
+      - what is the [pasillo]{"entity": "attribute", "value": "pasillo"} of [Carnes]{"entity": "hotel"}?
+      - Does the [Hilton]{"entity": "hotel"} have a [swimming pool]{"entity": "attribute", "value": "swimming-pool"}?
+      - list some [productos]{"entity": "object_type", "value": "producto"}
+      - puedes decirme el [pasillo]{"entity": "attribute", "value":"pasillo"} de las [Hilton]{"entity": "object_type", "value": "hotel"}?
+  - lookup: restaurant
+    examples: |
+      - Donath
+      - Berlin Burrito Company
+      - I due forni
+      - Lụa Restaurant
+      - Pfefferberg
+      - Marubi Ramen
+      - Gong Gan
+
+  - lookup: hotel
+    examples: |
+      - Hilton
+      - B&B
+      - Berlin Wall Hostel
+      - City Hotel
+      - Jugendherberge
+      - Berlin Hotel
+      - Carnes
+
+  - lookup: producto
+    examples: |
+      - Carnes
