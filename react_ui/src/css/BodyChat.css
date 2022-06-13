@@ -36,3 +36,7 @@
 .bodyInput__img:active {
   background-color: #33343f;
 }
+
+.loader {
+  background: #17181f;
+}

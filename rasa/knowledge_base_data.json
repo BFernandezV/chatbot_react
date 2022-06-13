@@ -1,0 +1,99 @@
+{
+  "producto": [
+    {
+      "id": 0,
+      "name": "Carnes",
+      "pasillo": "pasillo 1"
+    },
+    {
+      "id": 1,
+      "name": "Aceites",
+      "pasillo": "pasillo 2"
+    },
+    {
+      "id": 2,
+      "name": "Azucar",
+      "pasillo": "pasillo 3"
+    },
+    {
+      "id": 3,
+      "name": "Sal",
+      "pasillo": "pasillo 3"
+    },
+    {
+      "id": 4,
+      "name": "Cafe",
+      "pasillo": "pasillo 3"
+    },
+    {
+      "id": 5,
+      "name": "Té",
+      "pasillo": "pasillo 3"
+    },
+    {
+      "id": 6,
+      "name": "Papel higiénico",
+      "pasillo": "pasillo 1"
+    },
+    {
+      "id": 7,
+      "name": "Pepinillos",
+      "pasillo": "pasillo 4"
+    },
+    {
+      "id": 8,
+      "name": "Detergente",
+      "pasillo": "pasillo 5"
+    },
+    {
+      "id": 9,
+      "name": "Cif",
+      "pasillo": "pasillo 5"
+    },
+    {
+      "id": 10,
+      "name": "Pañales",
+      "pasillo": "pasillo 5"
+    },
+    {
+      "id": 11,
+      "name": "Toalla nova",
+      "pasillo": "pasillo 5"
+    },
+    {
+      "id": 12,
+      "name": "Frutas",
+      "pasillo": "pasillo 6"
+    },
+    {
+      "id": 13,
+      "name": "Naranjas",
+      "pasillo": "pasillo 6"
+    },
+    {
+      "id": 14,
+      "name": "Manzanas",
+      "pasillo": "pasillo 6"
+    },
+    {
+      "id": 15,
+      "name": "Platanos",
+      "pasillo": "pasillo 6"
+    },
+    {
+      "id": 16,
+      "name": "Bebidas",
+      "pasillo": "pasillo 7"
+    },
+    {
+      "id": 17,
+      "name": "Sprite",
+      "pasillo": "pasillo 7"
+    },
+    {
+      "id": 18,
+      "name": "Coca cola",
+      "pasillo": "pasillo 7"
+    }
+  ]
+}

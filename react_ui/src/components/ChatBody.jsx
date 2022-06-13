@@ -5,6 +5,7 @@ import "../css/BodyChat.css";
 import Send from "../images/send.png";
 import MessageL from "./MessageL";
 import MessageR from "./MessageR";
+import { LeapFrog } from "@uiball/loaders";
 
 const chatBody = () => {
   const messagesEndRef = useRef(null);
@@ -12,6 +13,7 @@ const chatBody = () => {
   const [maxId, setMaxId] = useState(1);
   const [textSend, setTextSend] = useState("");
   const [arrayMsg, setArrayMsg] = useState([]);
+  const [loader, setLoader] = useState(false);
 
   useEffect(() => {
     scrollToBottom();
@@ -27,6 +29,7 @@ const chatBody = () => {
   };
 
   const sendData = () => {
+    setLoader(true);
     document.querySelector(".bodyInput__input").value = "";
     connectBot();
   };
@@ -45,8 +48,10 @@ const chatBody = () => {
       .then((response) => response.json())
       .then((response) => {
         const temp = response[0];
-        // const id = temp["recipient_id"];
-        const msg = temp["text"];
+        console.log(temp);
+        const msg = temp
+          ? temp["text"]
+          : "Lo siento, no he encontrado una respuesta para tu mensaje :c";
         const value = maxId + 2;
         console.log(value);
         setArrayMsg([
@@ -55,6 +60,7 @@ const chatBody = () => {
           { id: value, text: msg, type: "hachiko" },
         ]);
         setMaxId(value);
+        setLoader(false);
       });
   };
 
@@ -83,6 +89,17 @@ const chatBody = () => {
             : "No hay mensajes"}
           <div ref={messagesEndRef} />
         </div>
+        <div className="loader">
+          <div
+            className={
+              (loader ? "visible" : "invisible") +
+              " text-center d-flex justify-content-center"
+            }
+          >
+            <LeapFrog size={50} speed={2.5} color="white" />
+          </div>
+        </div>
+
         <div className="bodyInput rounded-bottom">
           <div className="d-flex gap-3 p-3">
             <input
