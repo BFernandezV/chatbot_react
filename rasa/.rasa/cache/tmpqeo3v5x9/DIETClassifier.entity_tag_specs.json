@@ -1,0 +1,28 @@
+[
+  {
+    "tag_name": "entity",
+    "ids_to_tags": {
+      "1": "B-entity_name",
+      "2": "I-entity_name",
+      "3": "L-entity_name",
+      "4": "U-entity_name",
+      "5": "B-facility_type",
+      "6": "I-facility_type",
+      "7": "L-facility_type",
+      "8": "U-facility_type",
+      "0": "O"
+    },
+    "tags_to_ids": {
+      "B-entity_name": 1,
+      "I-entity_name": 2,
+      "L-entity_name": 3,
+      "U-entity_name": 4,
+      "B-facility_type": 5,
+      "I-facility_type": 6,
+      "L-facility_type": 7,
+      "U-facility_type": 8,
+      "O": 0
+    },
+    "num_tags": 9
+  }
+]
