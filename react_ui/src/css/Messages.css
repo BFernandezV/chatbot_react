@@ -1,0 +1,18 @@
+.messageR {
+  min-width: 100px;
+  max-width: 50%;
+  background-color: #fdf5d3;
+  border-radius: 20px 20px 0px 20px;
+  font-weight: 500;
+  color: #000;
+}
+
+.messageL {
+  min-width: 100px;
+  max-width: 50%;
+  background-color: #2a2b34;
+  border: 1px solid #717d7e;
+  border-radius: 20px 20px 20px 0px;
+  font-weight: 500;
+  color: #d0d3d4;
+}

@@ -5,6 +5,7 @@ intents:
   - goodbye
   - query_knowledge_base
   - bot_challenge
+  - name_product
 
 entities:
   - object_type
