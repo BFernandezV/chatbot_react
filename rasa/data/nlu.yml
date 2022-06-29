@@ -26,7 +26,8 @@ nlu:
   - intent: query_knowledge_base
     examples: |
       - Lista de [productos]{"entity": "object_type", "value": "producto"}
-      - puedes decirme el [pasillo]{"entity": "attribute", "value":"pasillo"} de las [Carnes]{"entity": "producto"}?
+      - puedes decirme el [pasillo]{"entity": "attribute", "value":"pasillo"} de las [name_product]{"entity": "producto", "value": "producto"}?
+      - [carnes] {"entity": "producto"}
 
   - lookup: name_product
     examples: |
