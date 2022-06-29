@@ -11,7 +11,11 @@ entities:
   - object_type
   - mention
   - attribute
+  - hotel
+  - restaurant
   - producto
+  - cuisine
+  - city
   - pasillo
 
 slots:
@@ -33,18 +37,37 @@ slots:
     mappings:
       - type: from_entity
         entity: attribute
+  hotel:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: hotel
+  restaurant:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: restaurant
   producto:
     type: text
     influence_conversation: false
     mappings:
       - type: from_entity
         entity: producto
-  pasillo:
+
+  city:
     type: text
     influence_conversation: false
     mappings:
       - type: from_entity
-        entity: pasillo
+        entity: city
+  cuisine:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: cuisine
 
 actions:
   - action_query_knowledge_base
@@ -59,8 +82,8 @@ responses:
     - text: "Goodbye. See you soon."
 
   utter_ask_rephrase:
-    - text: "Lo siento, no te entiendo, podrias repetir?"
-    - text: "Podrias repetir? no te he entiendo"
+    - text: "Sorry, I'm not sure I understand. Can you rephrase?"
+    - text: "Can you please rephrase? I did not got that."
 
   utter_iamabot:
     - text: "I am a bot, powered by Rasa."
