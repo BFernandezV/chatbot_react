@@ -6,6 +6,12 @@ intents:
   - query_knowledge_base
   - bot_challenge
   - name_product
+  - ask_lower_stress
+  - ast_eat_healthy
+  - ask_exercise
+  - ask_pasillo_carne
+  - inform
+  - out_of_scope
 
 entities:
   - object_type
@@ -19,6 +25,25 @@ entities:
   - pasillo
 
 slots:
+  confirm_exercise:
+    type: text
+    influence_conversation: false
+  exercise:
+    type: text
+    influence_conversation: false
+  sleep:
+    type: text
+    influence_conversation: false
+  diet:
+    type: unfeturize
+    influence_conversation: false
+  stress:
+    type: text
+    influence_conversation: false
+  goal:
+    type: text
+    influence_conversation: false
+
   object_type:
     type: text
     influence_conversation: false
@@ -87,7 +112,14 @@ responses:
 
   utter_iamabot:
     - text: "I am a bot, powered by Rasa."
-
+  utter_stress_info:
+    - text: "It's ok to feel overwhelmed at times. Try to set realistic expectations and exercise time managment techniques, like large tasks into more managable pieces. Relaxation techniques, like deep breath and meditation"
+  utter_diet_info:
+    - text: "A helthy diet includes fruits and vegetables, whole grains, diary, lean protein, and plant-based fats. While there is room in healthy diet for treats, added sugar should be eaten sparingly. Aim for a variety of foods, and fish"
+  utter_exercise_info:
+    - text: "Most healthy adulst shlud aim to get aboug 150 min of moderate exercise per week. This includes activities like swimming"
+  utter_pasillo_carne:
+    - text: "el pasillo de las carnes es el pasillo 9"
 session_config:
   session_expiration_time: 60 # value in minutes
   carry_over_slots_to_new_session: true

@@ -16,3 +16,11 @@ rules:
     steps:
       - intent: bot_challenge
       - action: utter_iamabot
+  - rule: stress info
+    steps:
+      - intent: ask_lower_stress
+      - action: utter_stress_info
+  - rule: rule carne
+    steps:
+      - intent: ask_pasillo_carne
+      - action: utter_pasillo_carne
