@@ -1,0 +1,6 @@
+[
+  {
+    "name": "name_product",
+    "pattern": "(\\bCarnes\\b|\\bAceite\\b)"
+  }
+]

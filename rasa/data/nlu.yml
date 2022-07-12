@@ -24,34 +24,38 @@ nlu:
       - see you later
   - intent: affirm
     examples: |
-      - yes
-      - y
-      - indeed
-      - of course
-      - that sounds good
-      - correct
+      - correcto
+      - si
+      - claro
+      - por supuesto
   - intent: deny
     examples: |
       - no
-      - n
-      - never
-      - I don't think so
-      - don't like that
-      - no way
-      - not really
+      - no gracias
+      - eso es todo
+      - nada mas
 
   - intent: inform
     examples: |
       - [rock](choice)
       - [paper](choice)
       - [scissors](choice)
-
-  # PROYECTO ASISTENTE DE SUPERMERCADO
-  - intent: ask_pasillo_carne
+  - intent: ask_pasillo
     examples: |
-      - donde esta el pasillo de las carnes?
-
-  - lookup: name_product
+      - estoy buscando el pasillo de la [Carne](producto)?
+      - donde esta la [Carne] (producto)?
+      - estoy buscando el pasillo de la [Fruta](producto)?
+      - donde esta la [Fruta] (producto)?
+      - estoy buscando el pasillo de los [Lacteo](producto)?
+      - donde estan los [Lacteo] (producto)?
+      - estoy buscando el pasillo de [Aseo personal](producto)?
+      - donde estan los articulos de [Aseo personal] (producto)?
+      - estoy buscando el pasillo de la [Reposteria](producto)?
+      - donde esta la [Reposteria] (producto)?
+      - estoy buscando el pasillo de la [Ropa](producto)?
+      - donde esta la [Ropa] (producto)?
+  - synonym: Fruta
     examples: |
-      - Carnes
-      - Aceite
+      - manzana
+      - pera
+      - platano

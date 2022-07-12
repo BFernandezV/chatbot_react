@@ -7,16 +7,24 @@ intents:
   - affirm
   - deny
   - bot_challenge
+  - ask_pasillo
 
 entities:
   - choice
+  - producto
 
 slots:
   choice:
     type: text
     mappings:
-      - type: text
+      - type: from_entity
         entity: choice
+
+  producto:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: producto
 
 responses:
   utter_play:
@@ -31,8 +39,15 @@ responses:
   utter_iamabot:
     - text: "I am a bot, powered by Rasa."
 
+  utter_bienvenida:
+    - text: "Buenas! que producto estas buscando?"
+
+  utter_nueva_pregunta:
+    - text: "necesitas la ubicacion de otro producto?"
+
 actions:
   - action_play_rps
+  - action_response_product
 
 session_config:
   session_expiration_time: 60
