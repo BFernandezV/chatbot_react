@@ -1,28 +1,19 @@
 version: "3.1"
 stories:
-  - story: greet and then query knowledge base
+  - story: play rock paper scissors
     steps:
       - intent: greet
-      - action: utter_greet
-      - intent: query_knowledge_base
-      - action: action_query_knowledge_base
-
-  - story: ask stress questions
+      - action: utter_play
+      - intent: inform
+      - action: action_play_rps
+      - action: utter_play_again
+  - story: play again
     steps:
-      - intent: ask_lower_stress
-      - action: utter_stress_info
-
-  - story: ask diet questions
+      - action: utter_play_again
+      - intent: affirm
+      - action: utter_play
+  - story: don't play again
     steps:
-      - intent: ask_eat_healthy
-      - action: utter_diet_info
-
-  - story: ask exercises
-    steps:
-      - intent: ask_exercise
-      - action: utter_exercise_info
-
-  - story: ask pasillo de carne
-    steps:
-      - intent: ask_pasillo_carne
-      - action: utter_pasillo_carne
+      - action: utter_play_again
+      - intent: deny
+      - action: utter_goodbye
