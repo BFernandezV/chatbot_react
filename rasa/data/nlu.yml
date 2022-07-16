@@ -15,7 +15,8 @@ nlu:
       - good morning
       - good evening
       - hey there
-
+      - hola
+      - que tal
   - intent: goodbye
     examples: |
       - bye
