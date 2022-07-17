@@ -46,7 +46,7 @@ nlu:
       - estoy buscando el pasillo de la [Carne](producto)?
       - donde esta la [Carne] (producto)?
       - estoy buscando el pasillo de la [Fruta](producto)?
-      - donde esta la [Fruta] (producto)?
+      - donde esta la [Fruta](producto)?
       - estoy buscando el pasillo de los [Lacteo](producto)?
       - donde estan los [Lacteo] (producto)?
       - estoy buscando el pasillo de [Aseo personal](producto)?
@@ -55,7 +55,7 @@ nlu:
       - donde esta la [Reposteria] (producto)?
       - estoy buscando el pasillo de la [Ropa](producto)?
       - donde esta la [Ropa] (producto)?
-  - synonym: Fruta
+  - lookup: Fruta
     examples: |
       - manzana
       - pera
