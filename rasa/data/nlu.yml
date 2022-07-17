@@ -46,17 +46,18 @@ nlu:
       - estoy buscando el pasillo de la [Carne](producto)?
       - donde esta la [Carne] (producto)?
       - estoy buscando el pasillo de la [Fruta](producto)?
-      - donde esta la [Fruta](producto)?
       - estoy buscando el pasillo de los [Lacteo](producto)?
       - donde estan los [Lacteo] (producto)?
       - estoy buscando el pasillo de [Aseo personal](producto)?
       - donde estan los articulos de [Aseo personal] (producto)?
       - estoy buscando el pasillo de la [Reposteria](producto)?
-      - donde esta la [Reposteria] (producto)?
       - estoy buscando el pasillo de la [Ropa](producto)?
-      - donde esta la [Ropa] (producto)?
-  - lookup: Fruta
+  - lookup: producto
     examples: |
       - manzana
       - pera
       - platano
+      - Reposteria
+      - Ropa
+      - Carne
+      - Fruta

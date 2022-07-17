@@ -83,6 +83,8 @@ class ActionResponseProduct(Action):
             dispatcher.utter_message(text="El pasillo de la repostería es el pasillo")
         elif user_ask_product == "Ropa":
             dispatcher.utter_message(text="El pasillo de la ropa es el pasillo 6")
+        elif user_ask_product == "platano":
+            dispatcher.utter_message(text="El platano es muy rico ñam ñam")
         else:
             dispatcher.utter_message(text="No he encontrado el producto que estas buscando")
  
