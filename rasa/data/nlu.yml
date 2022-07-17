@@ -52,6 +52,9 @@ nlu:
       - donde estan los articulos de [Aseo personal] (producto)?
       - estoy buscando el pasillo de la [Reposteria](producto)?
       - estoy buscando el pasillo de la [Ropa](producto)?
+      - quiero un [platano](producto)
+      - quiero [bebida](producto)
+      - [yoghurt](producto)
   - lookup: producto
     examples: |
       - manzana
