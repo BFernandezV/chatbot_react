@@ -36,3 +36,7 @@ stories:
       - action: utter_nueva_pregunta
       - intent: deny
       - action: utter_goodbye
+  - story: tell account number
+    steps:
+      - intent: tell_account_number
+      - action: action_account_number

@@ -44,14 +44,26 @@ nlu:
 
   - intent: ask_pasillo
     examples: |
-      - Estoy buscando el pasillo de la [Carne]{"entity": "producto"}
+      - estoy buscando el pasillo de la [Carne](producto)
+      - estoy buscando el pasillo de los [Lacteos](producto)?
+      - donde esta la [Carne] (producto)?
+      - donde estan los [Lacteo] (producto)?
+      - estoy buscando el pasillo de [Ropa](producto)?
+      - donde estan los articulos de [Menaje] (producto)?
+      - quiero un [platano](producto)
+      - quiero [bebida](producto)
+      - [yoghurt](producto)
       - Estoy en busca de la [Carne]{"entity": "producto"}
       - Cual es el pasillo de la [Carne]{"entity": "producto"}?
       - Necesito encontrar la [Carne]{"entity": "producto"}
-      - [Carne]{"entity": "producto"}
-      - [Carne]{"entity": "producto"} es lo que busco
       - necesito el pasillo de la [Beterraga](name_product)
 
+  - intent: tell_account_number
+    examples: |
+      - mi numero de cuenta es [1234](account_number)
+  - regex: account_number
+    examples: |
+      - \d{10,12}
 
   - lookup: producto
     examples: |
@@ -62,4 +74,3 @@ nlu:
       - Reposteria
       - Ropa
       - Tecnologia
-      
