@@ -70,10 +70,8 @@ class ActionResponseProduct(Action):
         # producto todo con minusculas
         user_ask_product = tracker.get_slot("producto")
         none_activacion = tracker.get_slot("producto")
-        if not none_activacion:  
-            dispatcher.utter_message("none activados jajas")
-            
-        dispatcher.utter_message(text=f"Has preguntado por {user_ask_product}")
+        if none_activacion:  
+            dispatcher.utter_message(text=f"Has preguntado por {user_ask_product}")
         
         if user_ask_product == "Carne":
             dispatcher.utter_message(text="El pasillo de las Carnes es el pasillo 8")
