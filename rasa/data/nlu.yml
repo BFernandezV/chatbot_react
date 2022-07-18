@@ -61,9 +61,14 @@ nlu:
   - intent: tell_account_number
     examples: |
       - mi numero de cuenta es [1234](account_number)
+      - i want a [algo](producto_string)
   - regex: account_number
     examples: |
       - \d{10,12}
+
+  - regex: producto_string
+    examples: |
+      - r"\b(\w+(?=\s\d+,)\s\d+,\s?\d+)"
 
   - lookup: producto
     examples: |

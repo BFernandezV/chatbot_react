@@ -14,7 +14,7 @@ entities:
   - producto
   - account_number
   - name_product
-
+  - producto_string
 slots:
   choice:
     type: text
@@ -32,6 +32,12 @@ slots:
     mappings:
       - type: from_entity
         entity: account_number
+
+  producto_string:
+    type: any
+    mappings:
+      - type: from_entity
+        entity: producto_string
 
   name_product:
     type: text

@@ -73,7 +73,7 @@ class ActionResponseProduct(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
  
         # producto todo con minusculas
-        user_ask_product = tracker.get_slot("name_product")
+        user_ask_product = tracker.get_slot("producto_string")
         print("PRODUCTO IDENTIFICADO: ",user_ask_product)
         # user_ask_product = user_ask_product.lower()
         dispatcher.utter_message(text=f"Has preguntado por {user_ask_product}")
@@ -121,5 +121,6 @@ class ActionGetAccountNumber(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
  
         # producto todo con minusculas
-        account_number = tracker.get_slot("account_number")
-        dispatcher.utter_message(text=f"tu numero de cuenta es {account_number}")
+        account_number = tracker.get_slot("producto_string")
+        
+        dispatcher.utter_message(text=f"has escrito {account_number}")
