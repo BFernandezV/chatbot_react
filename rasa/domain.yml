@@ -7,13 +7,12 @@ intents:
   - affirm
   - deny
   - bot_challenge
-  - ask_pasillo
+  # - ask_pasillo
   - tell_account_number
 entities:
   - choice
-  - producto
+  # - producto
   - account_number
-  - name_product
 
 slots:
   choice:
@@ -22,23 +21,17 @@ slots:
       - type: from_entity
         entity: choice
 
-  producto:
-    type: text
-    mappings:
-      - type: from_entity
-        entity: producto
+  # producto:
+  #   type: any
+  #   mappings:
+  #     - type: from_entity
+  #       entity: producto
+
   account_number:
-    type: float
+    type: any
     mappings:
       - type: from_entity
         entity: account_number
-
-  name_product:
-    type: text
-    influence_conversation: false
-    mappings:
-      - type: from_entity
-        entity: name_product
 
 responses:
   utter_play:
@@ -61,7 +54,7 @@ responses:
 
 actions:
   - action_play_rps
-  - action_response_product
+  # - action_response_product
   - action_account_number
 session_config:
   session_expiration_time: 60

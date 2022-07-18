@@ -17,20 +17,18 @@ stories:
   #     - action: utter_play_again
   #     - intent: deny
   #     - action: utter_goodbye
-  - story: preguntar por producto
-    steps:
-      - intent: greet
-      - action: utter_bienvenida
-      - intent: ask_pasillo
-        entities:
-          - name_product: "Beterraga"
-      - action: action_response_product
-      - action: utter_nueva_pregunta
-  - story: preguntar nuevamente
-    steps:
-      - action: utter_nueva_pregunta
-      - intent: affirm
-      - action: utter_bienvenida
+  # - story: preguntar por producto
+  #   steps:
+  #     - intent: greet
+  #     - action: utter_bienvenida
+  #     - intent: ask_pasillo
+  #     - action: action_response_product
+  #     - action: utter_nueva_pregunta
+  # - story: preguntar nuevamente
+  #   steps:
+  #     - action: utter_nueva_pregunta
+  #     - intent: affirm
+  #     - action: utter_bienvenida
   - story: don't play again
     steps:
       - action: utter_nueva_pregunta

@@ -42,35 +42,56 @@ nlu:
       - [paper](choice)
       - [scissors](choice)
 
-  - intent: ask_pasillo
-    examples: |
-      - estoy buscando el pasillo de la [Carne](producto)
-      - estoy buscando el pasillo de los [Lacteos](producto)?
-      - donde esta la [Carne] (producto)?
-      - donde estan los [Lacteo] (producto)?
-      - estoy buscando el pasillo de [Ropa](producto)?
-      - donde estan los articulos de [Menaje] (producto)?
-      - quiero un [platano](producto)
-      - quiero [bebida](producto)
-      - [yoghurt](producto)
-      - Estoy en busca de la [Carne]{"entity": "producto"}
-      - Cual es el pasillo de la [Carne]{"entity": "producto"}?
-      - Necesito encontrar la [Carne]{"entity": "producto"}
-      - necesito el pasillo de la [Beterraga](name_product)
+  # - intent: ask_pasillo
+  #   examples: |
+  #     - Estoy buscando el pasillo de la [Carne](producto)
+  #     - Estoy buscando el pasillo de los [Carne](producto)?
+  #     - Donde esta la [Carne] (producto)?
+  #     - Donde estan los [Carne] (producto)?
+  #     - Estoy buscando el pasillo de [Carne](producto)?
+  #     - Donde estan los articulos de [Carne] (producto)?
+  #     - Quiero un [Carne](producto)
+  #     - Quiero [Carne](producto)
+  #     - [Carne](producto)
+  #     - Estoy en busca de la [Carne]{"entity": "producto"}
+  #     - Cual es el pasillo de la [Carne]{"entity": "producto"}?
+  #     - Necesito encontrar la [Carne]{"entity": "producto"}
 
   - intent: tell_account_number
     examples: |
-      - mi numero de cuenta es [1234](account_number)
+      - Estoy buscando el pasillo de la [2313124213](account_number)
+      - Estoy buscando el pasillo de los [2313124213](account_number)
+      - Estoy buscando el pasillo del [2313124213](account_number)
+      - Donde esta la [2313124213](account_number)?
+      - Donde estan los [2313124213](account_number)?
+      - Donde esta el [2313124213](account_number)?
+      - Estoy en busca de la [2313124213](account_number)
+      - Estoy en busca del [2313124213](account_number)
+      - Estoy en busca de los [2313124213](account_number)
+      - Necesito encontrar la [2313124213](account_number)
+      - Necesito encontrar los [2313124213](account_number)
+      - Necesito encontrar el [2313124213](account_number)
+      - Cual es el pasillo de la [2313124213](account_number)?
+      - Cual es el pasillo de los [2313124213](account_number)?
+      - Cual es el pasillo del [2313124213](account_number)?
+
   - regex: account_number
     examples: |
-      - \d{10,12}
+      - la (.*)
+      - los (.*)
+      - del (.*)
+      - un (.*)
+      - una (.*)
+      - las (.*)
+      - unos (.*)
+      - buscando (.*)
 
-  - lookup: producto
-    examples: |
-      - Carne
-      - Fruta
-      - Lacteo
-      - Aseo personal
-      - Reposteria
-      - Ropa
-      - Tecnologia
+  # - lookup: producto
+  #   examples: |
+  #     - Carne
+  #     - Fruta
+  #     - Lacteo
+  #     - Aseo personal
+  #     - Reposteria
+  #     - Ropa
+  #     - Tecnologia
