@@ -42,35 +42,27 @@ nlu:
       - [paper](choice)
       - [scissors](choice)
 
-  - intent: ask_pasillo
+  - intent: solicitar_producto
     examples: |
-      - estoy buscando el pasillo de la [Carne](producto)
-      - estoy buscando el pasillo de los [Lacteos](producto)?
-      - donde esta la [Carne] (producto)?
-      - donde estan los [Lacteo] (producto)?
-      - estoy buscando el pasillo de [Ropa](producto)?
-      - donde estan los articulos de [Menaje] (producto)?
-      - quiero un [platano](producto)
-      - quiero [bebida](producto)
-      - [yoghurt](producto)
-      - Estoy en busca de la [Carne]{"entity": "producto"}
-      - Cual es el pasillo de la [Carne]{"entity": "producto"}?
-      - Necesito encontrar la [Carne]{"entity": "producto"}
+      - estoy buscando el pasillo de la [Carne](producto_string)
+      - estoy buscando el pasillo de los [Lacteos](producto_string)?
+      - donde esta la [Carne] (producto_string)?
+      - donde estan los [Lacteo] (producto_string)?
+      - estoy buscando el pasillo de [Ropa](producto_string)?
+      - donde estan los articulos de [Menaje] (producto_string)?
+      - quiero un [platano](producto_string)
+      - quiero [bebida](producto_string)
+      - [yoghurt](producto_string)
+      - Estoy en busca de la [Carne]{"entity": "producto_string"}
+      - Cual es el pasillo de la [Carne]{"entity": "producto_string"}?
+      - Necesito encontrar la [Carne]{"entity": "producto_string"}
       - necesito el pasillo de la [Beterraga](name_product)
-
-  - intent: tell_account_number
-    examples: |
-      - mi numero de cuenta es [1234](account_number)
-      - i want a [algo](producto_string)
-  - regex: account_number
-    examples: |
-      - \d{10,12}
 
   - regex: producto_string
     examples: |
-      - r"\b(\w+(?=\s\d+,)\s\d+,\s?\d+)"
+      - [a-z.*A-z]{1,}
 
-  - lookup: producto
+  - lookup: producto_string
     examples: |
       - Carne
       - Fruta
