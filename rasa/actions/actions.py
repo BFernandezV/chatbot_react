@@ -111,4 +111,15 @@ class ActionResponseProduct(Action):
             dispatcher.utter_message(text="No he encontrado el producto que estas buscando")
  
         return []
-   
+
+
+class ActionGetAccountNumber(Action):
+    def name(self) -> Text:
+        return "action_account_number"
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+ 
+        # producto todo con minusculas
+        account_number = tracker.get_slot("account_number")
+        dispatcher.utter_message(text=f"tu numero de cuenta es {account_number}")
