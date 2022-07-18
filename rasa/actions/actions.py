@@ -12,7 +12,9 @@ import wn
  
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
- 
+
+from autocorrect import Speller
+
 # computer_choice & determine_winner functions refactored from
 # https://github.com/thedanelias/rock-paper-scissors-python/blob/master/rockpaperscissors.py, MIT liscence
  
@@ -157,6 +159,16 @@ class ActionGetAccountNumber(Action):
         print("--------------------------------")
         account_number = tracker.get_slot("producto_string")
         
+
+        
+        spell = Speller(lang='es')
+
+        misspelled = ['papaz', 'votellas', 'lecshes','porotosz']
+        for word in misspelled:
+            print("original word: "+ word)
+            print("corrected word: "+ spell(word))
+
+
         dispatcher.utter_message(text=f"has escrito {account_number}")
 
 
