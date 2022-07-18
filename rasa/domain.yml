@@ -13,6 +13,8 @@ entities:
   - choice
   - producto
   - account_number
+  - name_product
+
 slots:
   choice:
     type: text
@@ -30,6 +32,13 @@ slots:
     mappings:
       - type: from_entity
         entity: account_number
+
+  name_product:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: name_product
 
 responses:
   utter_play:

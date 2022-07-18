@@ -5,6 +5,7 @@ language: es
 pipeline:
   - name: "WhitespaceTokenizer"
   - name: "RegexFeaturizer"
+  - name: "RegexEntityExtractor"
   - name: "LexicalSyntacticFeaturizer"
   - name: "CountVectorsFeaturizer"
   - name: "CountVectorsFeaturizer"
@@ -14,7 +15,6 @@ pipeline:
   - name: "DIETClassifier"
     epochs: 100
   - name: "EntitySynonymMapper"
-  - name: "RegexEntityExtractor"
 policies:
 # # No configuration for policies was provided. The following default policies were used to train your model.
 # # If you'd like to customize them, uncomment and adjust the policies.

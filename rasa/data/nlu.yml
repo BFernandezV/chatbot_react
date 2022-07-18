@@ -41,6 +41,7 @@ nlu:
       - [rock](choice)
       - [paper](choice)
       - [scissors](choice)
+
   - intent: ask_pasillo
     examples: |
       - estoy buscando el pasillo de la [Carne](producto)
@@ -52,6 +53,10 @@ nlu:
       - quiero un [platano](producto)
       - quiero [bebida](producto)
       - [yoghurt](producto)
+      - Estoy en busca de la [Carne]{"entity": "producto"}
+      - Cual es el pasillo de la [Carne]{"entity": "producto"}?
+      - Necesito encontrar la [Carne]{"entity": "producto"}
+      - necesito el pasillo de la [Beterraga](name_product)
 
   - intent: tell_account_number
     examples: |
@@ -59,3 +64,13 @@ nlu:
   - regex: account_number
     examples: |
       - \d{10,12}
+
+  - lookup: producto
+    examples: |
+      - Carne
+      - Fruta
+      - Lacteo
+      - Aseo personal
+      - Reposteria
+      - Ropa
+      - Tecnologia
