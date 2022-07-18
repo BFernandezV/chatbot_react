@@ -61,10 +61,34 @@ class ActionPlayRPS(Action):
  
         return []
 
+def cleanText(text):
+    # print("CLEAN TEXT: ", text)
+    if(text.find("?") >= 0):
+        text = text.replace("?","")
 
+    if(text.find("la ") >= 0):
+        return text.replace("la ", "")
+    elif(text.find("los ") >= 0):
+        return text.replace("los ", "")
+    elif(text.find("del ") >= 0):
+        return text.replace("del ", "")
+    elif(text.find("un ") >= 0):
+        return text.replace("un ", "")
+    elif(text.find("una ") >= 0):
+        return text.replace("una ", "")
+    elif(text.find("las ") >= 0):
+        return text.replace("las ", "")
+    elif(text.find("unos ") >= 0):
+        return text.replace("unos ", "")
+    elif(text.find("buscando ") >= 0):
+        return text.replace("buscando ", "")
+    
+
+        
+    
+    return "Producto desconocido"
 class ActionResponseProduct(Action):
 
-   
     def name(self) -> Text:
         return "action_response_product"
     
@@ -73,13 +97,15 @@ class ActionResponseProduct(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
  
         # producto todo con minusculas
-        user_ask_product = tracker.get_slot("producto_string")
-        print("PRODUCTO IDENTIFICADO: ",user_ask_product)
-        # user_ask_product = user_ask_product.lower()
-        dispatcher.utter_message(text=f"Has preguntado por {user_ask_product}")
+        user_ask_product = tracker.get_slot("name_product")
+        print("Este es el domain",domain)
+        print("Este es el producto sin filtro: ", user_ask_product)
+        if(user_ask_product != None): 
+            user_ask_product = cleanText(user_ask_product.lower())
+        else:
+            dispatcher.utter_message(text="No te he entendido :c...repite la frase")
 
-        # res = requests.get('https://latinwordnet.exeter.ac.uk/api/index/')
-        # print(res.text)
+        # user_ask_product = user_ask_product.lower()
 
         # es = wn.Wordnet('omw-es:1.4')
         # response = es.words(user_ask_product)[0]
@@ -109,8 +135,8 @@ class ActionResponseProduct(Action):
             dispatcher.utter_message(text="El platano es muy rico ñam ñam")
         else:
             dispatcher.utter_message(text="No he encontrado el producto que estas buscando")
- 
-        return []
+        
+        return "NADA"
 
 
 class ActionGetAccountNumber(Action):
@@ -121,6 +147,14 @@ class ActionGetAccountNumber(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
  
         # producto todo con minusculas
+        account_number = tracker.get_slot("account_number")
+        print("ORIGINAL:", account_number)
+        if(account_number != None): 
+            account_number = cleanText(account_number.lower())
+
+        print("PRODUCTO IDENTIFICADO: ",account_number)
+        dispatcher.utter_message(text=f"Tu producto es: {account_number}")
+        print("--------------------------------")
         account_number = tracker.get_slot("producto_string")
         
         dispatcher.utter_message(text=f"has escrito {account_number}")
@@ -141,9 +175,6 @@ class ActionResponderProducto(Action):
         print("PRODUCTO IDENTIFICADO: ",user_ask_product)
         # user_ask_product = user_ask_product.lower()
         dispatcher.utter_message(text=f"Has preguntado por {user_ask_product}")
-
-        res = requests.get('https://latinwordnet.exeter.ac.uk/api/index/')
-        print(res.text)
 
         es = wn.Wordnet('omw-es:1.4')
         response = es.words(user_ask_product)[0]
