@@ -52,3 +52,10 @@ nlu:
       - quiero un [platano](producto)
       - quiero [bebida](producto)
       - [yoghurt](producto)
+
+  - intent: tell_account_number
+    examples: |
+      - mi numero de cuenta es [1234](account_number)
+  - regex: account_number
+    examples: |
+      - \d{10,12}
