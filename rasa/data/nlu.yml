@@ -41,22 +41,25 @@ nlu:
       - [rock](choice)
       - [paper](choice)
       - [scissors](choice)
+
   - intent: ask_pasillo
     examples: |
-      - estoy buscando el pasillo de la [Carne](producto)?
-      - donde esta la [Carne] (producto)?
-      - estoy buscando el pasillo de la [Fruta](producto)?
-      - donde esta la [Fruta] (producto)?
-      - estoy buscando el pasillo de los [Lacteo](producto)?
-      - donde estan los [Lacteo] (producto)?
-      - estoy buscando el pasillo de [Aseo personal](producto)?
-      - donde estan los articulos de [Aseo personal] (producto)?
-      - estoy buscando el pasillo de la [Reposteria](producto)?
-      - donde esta la [Reposteria] (producto)?
-      - estoy buscando el pasillo de la [Ropa](producto)?
-      - donde esta la [Ropa] (producto)?
-  - synonym: Fruta
+      - Estoy buscando el pasillo de la [Carne]{"entity": "producto"}
+      - Estoy en busca de la [Carne]{"entity": "producto"}
+      - Cual es el pasillo de la [Carne]{"entity": "producto"}?
+      - Necesito encontrar la [Carne]{"entity": "producto"}
+      - [Carne]{"entity": "producto"}
+      - [Carne]{"entity": "producto"} es lo que busco
+      - necesito el pasillo de la [Beterraga](name_product)
+
+
+  - lookup: producto
     examples: |
-      - manzana
-      - pera
-      - platano
+      - Carne
+      - Fruta
+      - Lacteo
+      - Aseo personal
+      - Reposteria
+      - Ropa
+      - Tecnologia
+      

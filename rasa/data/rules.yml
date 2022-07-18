@@ -6,6 +6,11 @@ rules:
       - intent: goodbye
       - action: utter_goodbye
 
+  # - rule: search_product
+  #   steps:
+  #     - intent: ask_pasillo
+  #     - action: action_response_product
+
   # - rule: Say 'I am a bot' anytime the user challenges
   #   steps:
   #     - intent: bot_challenge

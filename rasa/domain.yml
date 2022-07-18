@@ -12,6 +12,7 @@ intents:
 entities:
   - choice
   - producto
+  - name_product
 
 slots:
   choice:
@@ -25,6 +26,13 @@ slots:
     mappings:
       - type: from_entity
         entity: producto
+
+  name_product:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: name_product
 
 responses:
   utter_play:
