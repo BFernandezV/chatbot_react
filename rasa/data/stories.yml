@@ -37,4 +37,4 @@ stories:
   - story: tell account number
     steps:
       - intent: tell_account_number
-      - action: action_account_number
+      - action: action_responder_producto

@@ -57,7 +57,7 @@ nlu:
   #     - Cual es el pasillo de la [Carne]{"entity": "producto"}?
   #     - Necesito encontrar la [Carne]{"entity": "producto"}
 
-  - intent: tell_account_number
+  - regex: producto_string
     examples: |
       - Estoy buscando el pasillo de la [2313124213](account_number)
       - Estoy buscando el pasillo de los [2313124213](account_number)
