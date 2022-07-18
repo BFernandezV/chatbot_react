@@ -1,0 +1,12 @@
+version: "3.1"
+nlu:
+  - lookup: producto
+    examples: |
+      - manzana
+      - pera
+      - platano
+      - Reposteria
+      - Ropa
+      - Carne
+      - Fruta
+      - Aseo personal

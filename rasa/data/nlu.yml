@@ -43,20 +43,12 @@ nlu:
       - [scissors](choice)
   - intent: ask_pasillo
     examples: |
-      - estoy buscando el pasillo de la [Carne](producto)?
+      - estoy buscando el pasillo de la [Carne](producto)
+      - estoy buscando el pasillo de los [Lacteos](producto)?
       - donde esta la [Carne] (producto)?
-      - estoy buscando el pasillo de la [Fruta](producto)?
-      - donde esta la [Fruta] (producto)?
-      - estoy buscando el pasillo de los [Lacteo](producto)?
       - donde estan los [Lacteo] (producto)?
-      - estoy buscando el pasillo de [Aseo personal](producto)?
-      - donde estan los articulos de [Aseo personal] (producto)?
-      - estoy buscando el pasillo de la [Reposteria](producto)?
-      - donde esta la [Reposteria] (producto)?
-      - estoy buscando el pasillo de la [Ropa](producto)?
-      - donde esta la [Ropa] (producto)?
-  - synonym: Fruta
-    examples: |
-      - manzana
-      - pera
-      - platano
+      - estoy buscando el pasillo de [Ropa](producto)?
+      - donde estan los articulos de [Menaje] (producto)?
+      - quiero un [platano](producto)
+      - quiero [bebida](producto)
+      - [yoghurt](producto)
