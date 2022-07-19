@@ -43,6 +43,7 @@ nlu:
       - Estoy buscando el pasillo del [carne](producto)
       - Donde esta la [carne](producto)?
       - Donde estan los [carne](producto)?
+      - quiero una [carne](producto)
       - Donde esta el [carne](producto)?
       - Estoy en busca de la [carne](producto)
       - Estoy en busca del [carne](producto)
@@ -53,7 +54,8 @@ nlu:
       - Cual es el pasillo de la [carne](producto)?
       - Cual es el pasillo de los [carne](producto)?
       - Cual es el pasillo del [carne](producto)?
-
+      - quiero [carne](producto)
+      - Necesito [canre](producto)
   - regex: producto
     examples: |
       - la (.*)
@@ -64,7 +66,8 @@ nlu:
       - las (.*)
       - unos (.*)
       - buscando (.*)
-
+      - quiero (.*)
+      - necesito (.*)
   # - lookup: producto
   #   examples: |
   #     - Carne

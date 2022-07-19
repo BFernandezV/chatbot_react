@@ -43,6 +43,14 @@ def cleanText(text):
         return text.replace("buscando ", "")
     return "Producto desconocido"
 
+def stringMatching(name_product, word):
+    if(name_product.find(word) >= 0 
+       or word in name_product 
+       or name_product in word
+       or name_product.startswith(word) 
+       or name_product.endswith(word)): 
+        return bool(1)
+    return bool(0)
 
 class ActionAnswerProduct(Action):
     def name(self) -> Text:
@@ -63,27 +71,28 @@ class ActionAnswerProduct(Action):
         # print("CORRECTOR: ",word)
         # print("------------------------------------------")
 
-        file = open('knowledge_base_data.json')
+        file = open('knowledge_base_data.json', encoding='utf-8')
         data = json.load(file)
         categorias_encontradas = dict()
 
         for category in data["data"]:
             # capturar informacion
             for product in category['productos']:
-                name_product = product['name']
+                name_product = product['name'].lower()
                 name_category = category['name']
-                if(name_product.lower().find(word) >= 0):
-                    categorias_encontradas[name_category] = category['pasillo']
+                if(stringMatching(name_product,word)):
+                    categorias_encontradas[name_category] = [category['pasillo'], product['name']]
             # procesar informacion
             # caso 1: los productos encontrados pertenecen a una misma categoría
                 # respuesta: "nombre de categoria" y "pasillo"
+        dispatcher.utter_message(text=f"He detectado {word}")
         if(len(categorias_encontradas) == 1):
             for key, value in categorias_encontradas.items():
-                dispatcher.utter_message(text=f"La categoría que buscas es {key}, que se encuentra en el pasillo {value}")
+                dispatcher.utter_message(text=f"La categoría del producto {value[1]} es {key}, que se encuentra en el pasillo {value[0]}")
         elif(len(categorias_encontradas) > 1):
             dispatcher.utter_message(text=f"He encontrado las siguientes categorias: ")
             for key, value in categorias_encontradas.items():
-                dispatcher.utter_message(text=f"Categoría {key}, que se encuentra en el pasillo {value}")
+                dispatcher.utter_message(text=f"Producto {value[1]} con categoría {key}, que se encuentra en el pasillo {value[0]}")
         else:
             dispatcher.utter_message(text=f"No he encontrado la categoria correspondiente al producto: {word}")
 
