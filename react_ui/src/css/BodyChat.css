@@ -5,7 +5,8 @@
 
 .bodyChat {
   background-color: #17181f;
-  height: 650px;
+  height: 550px;
+  min-width: 300px;
 }
 
 .bodyInput {

@@ -56,21 +56,25 @@ const chatBody = () => {
 
         temp.map((element) => {
           let idElement = value + 1;
+          console.log(temp[temp.length - 1] === element);
           arrayMsgHachi.push({
             id: idElement,
             text: element["text"],
             type: "hachiko",
+            label: temp[temp.length - 1] === element ? true : false,
           });
           value++;
         });
-        setArrayMsg([
-          ...arrayMsg,
-          { id: idmsg, text: textSend, type: "me" },
-          ...arrayMsgHachi,
-        ]);
 
-        setMaxId(maxId + temp.length + 1);
-        setLoader(false);
+        setTimeout(function() {
+          setArrayMsg([
+            ...arrayMsg,
+            { id: idmsg, text: textSend, type: "me" },
+            ...arrayMsgHachi,
+          ]);
+          setMaxId(maxId + temp.length + 1);
+          setLoader(false);
+        }, 1500);
       });
   };
 
@@ -93,7 +97,7 @@ const chatBody = () => {
                 msg.type === "me" ? (
                   <MessageR key={msg.id} text={msg.text} />
                 ) : (
-                  <MessageL key={msg.id} text={msg.text} />
+                  <MessageL key={msg.id} text={msg.text} label={msg.label} />
                 )
               )
             : "No hay mensajes"}
