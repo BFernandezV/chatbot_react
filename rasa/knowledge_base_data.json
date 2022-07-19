@@ -1,224 +1,603 @@
 {
-    "restaurant": [
-        {
-            "id": 0,
-            "name": "Donath",
-            "cuisine": "Italian",
-            "outside-seating": true,
-            "price-range": "mid-range"
-        },
-        {
-            "id": 1,
-            "name": "Berlin Burrito Company",
-            "cuisine": "Mexican",
-            "outside-seating": false,
-            "price-range": "cheap"
-        },
-        {
-            "id": 2,
-            "name": "I due forni",
-            "cuisine": "Italian",
-            "outside-seating": true,
-            "price-range": "mid-range"
-        },
-        {
-            "id": 3,
-            "name": "Lụa Restaurant",
-            "cuisine": "Vietnamese",
-            "outside-seating": true,
-            "price-range": "cheap"
-        },
-        {
-            "id": 4,
-            "name": "Pfefferberg",
-            "cuisine": "German",
-            "outside-seating": true,
-            "price-range": "mid-range"
-        },
-        {
-            "id": 5,
-            "name": "Marubi Ramen",
-            "cuisine": "Japanese",
-            "outside-seating": false,
-            "price-range": "cheap"
-        },
-        {
-            "id": 6,
-            "name": "Gong Gan",
-            "cuisine": "Korean",
-            "outside-seating": true,
-            "price-range": "cheap"
-        }
-    ],
-    "hotel": [
-        {
-            "id": 0,
-            "name": "Hilton",
-            "price-range": "expensive",
-            "breakfast-included": true,
-            "city": "Berlin",
-            "free-wifi": true,
-            "star-rating": 5,
-            "swimming-pool": true
-        },
-        {
-            "id": 1,
-            "name": "Carnes",
-            "price-range": "expensive",
-            "breakfast-included": true,
-            "city": "Frankfurt am Main",
-            "pasillo": "pasillo 1",
-            "free-wifi": true,
-            "star-rating": 4,
-            "swimming-pool": false
-        },
-        {
-            "id": 2,
-            "name": "B&B",
-            "price-range": "mid-range",
-            "breakfast-included": false,
-            "city": "Berlin",
-            "free-wifi": false,
-            "star-rating": 1,
-            "swimming-pool": false
-        },
-        {
-            "id": 3,
-            "name": "Berlin Wall Hostel",
-            "price-range": "cheap",
-            "breakfast-included": false,
-            "city": "Berlin",
-            "free-wifi": true,
-            "star-rating": 2,
-            "swimming-pool": false
-        },
-        {
-            "id": 4,
-            "name": "City Hotel",
-            "price-range": "expensive",
-            "breakfast-included": true,
-            "city": "Frankfurt am Main",
-            "free-wifi": true,
-            "star-rating": 3,
-            "swimming-pool": false
-        },
-        {
-            "id": 5,
-            "name": "Jugendherberge",
-            "price-range": "cheap",
-            "breakfast-included": true,
-            "city": "Berlin",
-            "free-wifi": false,
-            "star-rating": 2,
-            "swimming-pool": false
-        },
-        {
-            "id": 6,
-            "name": "Berlin Hotel",
-            "price-range": "mid-range",
-            "breakfast-included": true,
-            "city": "Berlin",
-            "free-wifi": true,
-            "star-rating": 3,
-            "swimming-pool": true
-        }
-    ],
- 
-  "producto": [
+  "data": [
     {
       "id": 0,
-      "name": "Carnes",
-      "pasillo": "pasillo 1"
+      "name": "Reposteria",
+      "productos": [
+        {
+          "id": 0,
+          "name": "leche condensada"
+        },
+        {
+          "id": 1,
+          "name": "crema de leche"
+        },
+        {
+          "id": 2,
+          "name": "crema sin lactosa"
+        },
+        {
+          "id": 3,
+          "name": "jalea"
+        },
+        {
+          "id": 4,
+          "name": "polvo de hornear"
+        },
+        {
+          "id": 5,
+          "name": "escencia de vanilla"
+        },
+        {
+          "id": 6,
+          "name": "levadura"
+        },
+        {
+          "id": 7,
+          "name": "semola"
+        },
+        {
+          "id": 8,
+          "name": "postres"
+        },
+        {
+          "id": 9,
+          "name": "crema pastelera"
+        },
+        {
+          "id": 10,
+          "name": "coco rallado"
+        }
+      ],
+      "pasillo": 6
     },
     {
       "id": 1,
-      "name": "Aceites",
-      "pasillo": "pasillo 2"
+      "name": "Aseo Personal",
+      "productos": [
+            {
+              "id": 0,
+              "name": "pasta de dientes"
+            },
+            {
+              "id": 1,
+              "name": "jabon liquido"
+            },
+            {
+              "id": 2,
+              "name": "shampoo"
+            },
+            {
+              "id": 3,
+              "name": "tintura"
+            },
+            {
+              "id": 4,
+              "name": "toallas higienicas"
+            },
+            {
+              "id": 5,
+              "name": "enjuague bucal"
+            },
+            {
+              "id": 6,
+              "name": "levadura"
+            },
+            {
+              "id": 7,
+              "name": "maquina de afeitar"
+            },
+            {
+              "id": 8,
+              "name": "desodorante"
+            },
+            {
+              "id": 9,
+              "name": "cepillo de dientes"
+            },
+            {
+              "id": 10,
+              "name": "antitranspirante"
+            }
+      ],
+      "pasillo": 3
     },
     {
       "id": 2,
-      "name": "Azucar",
-      "pasillo": "pasillo 3"
+      "name": "Panaderia y Pasteleria",
+      "productos": [
+        {
+          "id": 0,
+          "name": "marraqueta"
+        },
+        {
+          "id": 1,
+          "name": "hallulla"
+        },
+        {
+          "id": 2,
+          "name": "pan integral"
+        },
+        {
+          "id": 3,
+          "name": "pan de molde"
+        },
+        {
+          "id": 4,
+          "name": "pan pita"
+        },
+        {
+          "id": 5,
+          "name": "pan"
+        },
+        {
+          "id": 6,
+          "name": "pan rallado"
+        },
+        {
+          "id": 7,
+          "name": "baguette"
+        },
+        {
+          "id": 8,
+          "name": "pan coliza"
+        }
+      ],
+      "pasillo": 7
     },
     {
       "id": 3,
-      "name": "Sal",
-      "pasillo": "pasillo 3"
+      "name": "Lacteos",
+      "productos": [
+        {
+          "id": 0,
+          "name": "mantequilla"
+        },
+        {
+          "id": 1,
+          "name": "leche"
+        },
+        {
+          "id": 2,
+          "name": "leche semidescremada"
+        },
+        {
+          "id": 3,
+          "name": "yoghurt"
+        },
+        {
+          "id": 4,
+          "name": "margarina"
+        },
+        {
+          "id": 5,
+          "name": "huevo"
+        }
+      ],
+      "pasillo": 2
     },
     {
       "id": 4,
-      "name": "Cafe",
-      "pasillo": "pasillo 3"
+      "name": "Carniceria",
+      "productos": [
+        {
+          "id": 0,
+          "name": "carne molida"
+        },
+        {
+          "id": 1,
+          "name": "arañita poncho parrillero"
+        },
+        {
+          "id": 2,
+          "name": "filetitos de pollo"
+        },
+        {
+          "id": 3,
+          "name": "tartaro"
+        },
+        {
+          "id": 4,
+          "name": "filetitos de pechuga"
+        },
+        {
+          "id": 5,
+          "name": "pechuga deshuesada"
+        },
+        {
+          "id": 6,
+          "name": "Bistec de posta rosada"
+        },
+        {
+          "id": 7,
+          "name": "asiento al vacio"
+        },
+        {
+          "id": 8,
+          "name": "pechuga entera"
+        },
+        {
+          "id": 9,
+          "name": "lomo liso"
+        },
+        {
+          "id": 10,
+          "name": "trutro de pollo"
+        },
+        {
+          "id": 11,
+          "name": "trutro combinado"
+        },
+        {
+          "id": 12,
+          "name": "lomo liso al vacio"
+        },
+        {
+          "id": 13,
+          "name": "pollo asado"
+        },
+        {
+          "id": 14,
+          "name": "lomo vetado"
+        },
+        {
+          "id": 15,
+          "name": "bistec de pavo"
+        },
+        {
+          "id": 16,
+          "name": "trutro largo"
+        },
+        {
+          "id": 17,
+          "name": "posta negra"
+        },
+        {
+          "id": 18,
+          "name": "bistec de pechuga deshuesada"
+        },
+        {
+          "id": 19,
+          "name": "carne"
+        },
+        {
+          "id": 20,
+          "name": "carnes"
+        },
+        {
+          "id": 21,
+          "name": "bistec de asiento"
+        },
+        {
+          "id": 22,
+          "name": "Chuleta"
+        },
+        {
+          "id": 23,
+          "name": "filete"
+        }
+      ],
+      "pasillo": 6
     },
     {
       "id": 5,
-      "name": "Té",
-      "pasillo": "pasillo 3"
+      "name": "Frutas y Verduras",
+      "productos": [
+        {
+          "id": 0,
+          "name": "platano granel"
+        },
+        {
+          "id": 1,
+          "name": "tomate Granel"
+        },
+        {
+          "id": 2,
+          "name": "palta hass"
+        },
+        {
+          "id": 3,
+          "name": "limon"
+        },
+        {
+          "id": 4,
+          "name": "pepino"
+        },
+        {
+          "id": 5,
+          "name": "papas"
+        },
+        {
+          "id": 6,
+          "name": "coliflor"
+        },
+        {
+          "id": 7,
+          "name": "pimineto verde"
+        },
+        {
+          "id": 8,
+          "name": "lechuga"
+        },
+        {
+          "id": 9,
+          "name": "perejil"
+        },
+        {
+          "id": 10,
+          "name": "acelga"
+        }
+        ,
+        {
+          "id": 11,
+          "name": "pera"
+        }
+      ],
+      "pasillo": 4
     },
     {
-      "id": 6,
-      "name": "Papel higiénico",
-      "pasillo": "pasillo 1"
-    },
-    {
-      "id": 7,
-      "name": "Pepinillos",
-      "pasillo": "pasillo 4"
-    },
-    {
-      "id": 8,
-      "name": "Detergente",
-      "pasillo": "pasillo 5"
-    },
-    {
-      "id": 9,
-      "name": "Cif",
-      "pasillo": "pasillo 5"
-    },
-    {
-      "id": 10,
-      "name": "Pañales",
-      "pasillo": "pasillo 5"
-    },
-    {
-      "id": 11,
-      "name": "Toalla nova",
-      "pasillo": "pasillo 5"
-    },
-    {
-      "id": 12,
-      "name": "Frutas",
-      "pasillo": "pasillo 6"
-    },
-    {
-      "id": 13,
-      "name": "Naranjas",
-      "pasillo": "pasillo 6"
-    },
-    {
-      "id": 14,
-      "name": "Manzanas",
-      "pasillo": "pasillo 6"
-    },
-    {
-      "id": 15,
-      "name": "Platanos",
-      "pasillo": "pasillo 6"
-    },
-    {
-      "id": 16,
-      "name": "Bebidas",
-      "pasillo": "pasillo 7"
-    },
-    {
-      "id": 17,
-      "name": "Sprite",
-      "pasillo": "pasillo 7"
-    },
-    {
-      "id": 18,
-      "name": "Coca cola",
-      "pasillo": "pasillo 7"
-    }
-  ]
+        "id": 6,
+        "name": "Bebestibles",
+        "productos": [
+          {
+            "id": 0,
+            "name": "Cerveza artesanal"
+          },
+          {
+            "id": 1,
+            "name": "Coca Cola"
+          },
+          {
+            "id": 2,
+            "name": "agua saborizada pera"
+          },
+          {
+            "id": 3,
+            "name": "jugo en polvo pera"
+          },
+          {
+            "id": 4,
+            "name": "bebida sin azucar"
+          },
+          {
+            "id": 5,
+            "name": "fanta"
+          },
+          {
+            "id": 6,
+            "name": "bebida pepsi"
+          },
+          {
+            "id": 7,
+            "name": "jugo de manzana"
+          },
+          {
+            "id": 8,
+            "name": "jugo de pera"
+          },
+          {
+            "id": 9,
+            "name": "Jugo vivo pera manzan"
+          },
+          {
+            "id": 10,
+            "name": "Jugo freso de pomelo"
+          },
+          {
+            "id": 11,
+            "name": "Jugo de damazco"
+          },
+          {
+            "id": 12,
+            "name": "bebida energetica red bull"
+          }
+        ],
+        "pasillo": 4
+      },
+      {
+        "id": 7,
+        "name": "Congelados",
+        "productos": [
+          {
+            "id": 0,
+            "name": "hamburguesa"
+          },
+          {
+            "id": 1,
+            "name": "sopa esparrago"
+          },
+          {
+            "id": 2,
+            "name": "sopa"
+          },
+          {
+            "id": 3,
+            "name": "choclo en grano"
+          },
+          {
+            "id": 4,
+            "name": "arroz de coliflor"
+          },
+          {
+            "id": 5,
+            "name": "porotos verdes"
+          },
+          {
+            "id": 6,
+            "name": "arvejas"
+          },
+          {
+            "id": 7,
+            "name": "sofrito con ajo"
+          },
+          {
+            "id": 8,
+            "name": "sofrito"
+          },
+          {
+            "id": 9,
+            "name": "choclo"
+          },
+          {
+            "id": 10,
+            "name": "zapallo en cubos"
+          },
+          {
+            "id": 11,
+            "name": "primavera"
+          },
+          {
+            "id": 12,
+            "name": "mix primavera"
+          },
+          {
+            "id": 13,
+            "name": "habas congeladas"
+          },
+          {
+            "id": 14,
+            "name": "pasta de choclo"
+          },
+          {
+            "id": 15,
+            "name": "poroto verde corte frances"
+          },
+          {
+            "id": 16,
+            "name": "cebolla picada"
+          },
+          {
+            "id": 17,
+            "name": "nuggets de pollo"
+          },
+          {
+            "id": 18,
+            "name": "papas prefritas"
+          },
+          {
+            "id": 19,
+            "name": "papas fritas"
+          },
+          {
+            "id": 20,
+            "name": "hielo"
+          },
+          {
+            "id": 21,
+            "name": "hielo campana"
+          },
+          {
+            "id": 22,
+            "name": "espinaca"
+          },
+          {
+            "id": 23,
+            "name": "papas duquesas"
+          }
+        ],
+        "pasillo": 5
+      },
+      {
+        "id": 8,
+        "name": "Mascotas",
+        "productos": [
+          {
+            "id": 0,
+            "name": "Alimento gato salmon 3 kg"
+          },
+          {
+            "id": 1,
+            "name": "Alimento de gato"
+          },
+          {
+            "id": 3,
+            "name": "alimento de perro"
+          },
+          {
+            "id": 4,
+            "name": "juguete mascotas"
+          },
+          {
+            "id": 5,
+            "name": "juguete de gato"
+          },
+          {
+            "id": 6,
+            "name": "hueso"
+          },
+          {
+            "id": 7,
+            "name": "hueso de juguete"
+          },
+          {
+            "id": 8,
+            "name": "arena"
+          },
+          {
+            "id": 9,
+            "name": "arena esterilizada"
+          },
+          {
+            "id": 10,
+            "name": "arena de gato"
+          },
+          {
+            "id": 11,
+            "name": "arnes"
+          }
+        ],
+        "pasillo": 1
+      },
+      {
+        "id": 9,
+        "name": "Hogar",
+        "productos": [
+          {
+            "id": 0,
+            "name": "sabana"
+          },
+          {
+            "id": 1,
+            "name": "cuchara"
+          },
+          {
+            "id": 3,
+            "name": "bolsas"
+          },
+          {
+            "id": 4,
+            "name": "carbon"
+          },
+          {
+            "id": 5,
+            "name": "salero"
+          },
+          {
+            "id": 6,
+            "name": "moldadientes"
+          },
+          {
+            "id": 7,
+            "name": "canister"
+          },
+          {
+            "id": 8,
+            "name": "platos"
+          },
+          {
+            "id": 9,
+            "name": "mantel"
+          },
+          {
+            "id": 10,
+            "name": "caja plastica"
+          },
+          {
+            "id": 11,
+            "name": "jarro"
+          }
+        ],
+        "pasillo": 3
+      }
+  ] 
 }

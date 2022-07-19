@@ -55,7 +55,7 @@ actions:
   - action_play_rps
   # - action_response_product
   - action_account_number
-  - action_responder_producto
+  # - action_responder_producto
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true

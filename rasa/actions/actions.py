@@ -7,15 +7,17 @@
  
 from typing import Any, Text, Dict, List
 import random
-import requests
+
 import wn
+import json
+from autocorrect import Speller
+from nltk.corpus import wordnet
  
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
  
 # computer_choice & determine_winner functions refactored from
 # https://github.com/thedanelias/rock-paper-scissors-python/blob/master/rockpaperscissors.py, MIT liscence
- 
  
 class ActionPlayRPS(Action):
 
@@ -82,10 +84,6 @@ def cleanText(text):
         return text.replace("unos ", "")
     elif(text.find("buscando ") >= 0):
         return text.replace("buscando ", "")
-    
-
-        
-    
     return "Producto desconocido"
 class ActionResponseProduct(Action):
 
@@ -152,13 +150,38 @@ class ActionGetAccountNumber(Action):
         if(account_number != None): 
             account_number = cleanText(account_number.lower())
 
-        print("PRODUCTO IDENTIFICADO: ",account_number)
-        dispatcher.utter_message(text=f"Tu producto es: {account_number}")
-        print("--------------------------------")
-        account_number = tracker.get_slot("producto_string")
-        
-        dispatcher.utter_message(text=f"has escrito {account_number}")
+        spell = Speller('es')
+        word = spell(account_number)
+        print("CORRECTOR: ",word)
+        print("------------------------------------------")
 
+        file = open('knowledge_base_data.json')
+        data = json.load(file)
+        categorias_encontradas = dict()
+
+        for category in data["data"]:
+            # capturar informacion
+            for product in category['productos']:
+                name_product = product['name']
+                name_category = category['name']
+                if(name_product.lower().find(word) >= 0):
+                    categorias_encontradas[name_category] = category['pasillo']
+            # procesar informacion
+            # caso 1: los productos encontrados pertenecen a una misma categoría
+                # respuesta: "nombre de categoria" y "pasillo"
+        if(len(categorias_encontradas) == 1):
+            for key, value in categorias_encontradas.items():
+                dispatcher.utter_message(text=f"La categoría que buscas es {key}, que se encuentra en el pasillo {value}")
+        elif(len(categorias_encontradas) > 1):
+            dispatcher.utter_message(text=f"He encontrado las siguientes categorias: ")
+            for key, value in categorias_encontradas.items():
+                dispatcher.utter_message(text=f"Categoría {key}, que se encuentra en el pasillo {value}")
+        else:
+            dispatcher.utter_message(text=f"No he encontrado la categoria correspondiente al producto: {word}")
+
+                
+
+       
 
 class ActionResponderProducto(Action):
 
@@ -206,3 +229,16 @@ class ActionResponderProducto(Action):
             dispatcher.utter_message(text="No he encontrado el producto que estas buscando")
  
         return []
+
+
+#   word = spell(account_number)
+
+#     es = wn.Wordnet('omw-es:1.4')
+
+#     for x in es.synsets(word):
+#         print("Esta es la palabra: ", x)
+#         print("Estos son los similares: ", x.lemmas())
+#         print("Hipernimos: ", x.hypernyms())
+#         print("Hipernimos value: ", x.hyponyms()[1].lemmas())
+#         print("Hiponimos: ", x.hyponyms())
+#         print("Hiponimos: ", x.hyponyms()[0].lemmas())

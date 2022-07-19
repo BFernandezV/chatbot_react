@@ -47,19 +47,29 @@ const chatBody = () => {
     })
       .then((response) => response.json())
       .then((response) => {
-        const temp = response[0];
-        console.log(temp);
-        const msg = temp
-          ? temp["text"]
-          : "Lo siento, no he encontrado una respuesta para tu mensaje :c";
-        const value = maxId + 2;
-        console.log(value);
+        const temp = response;
+        let arrayMsgHachi = [];
+
+        console.log("La respuesta del bot: ", temp);
+        let value = maxId;
+        const idmsg = maxId;
+
+        temp.map((element) => {
+          let idElement = value + 1;
+          arrayMsgHachi.push({
+            id: idElement,
+            text: element["text"],
+            type: "hachiko",
+          });
+          value++;
+        });
         setArrayMsg([
           ...arrayMsg,
-          { id: value - 1, text: textSend, type: "me" },
-          { id: value, text: msg, type: "hachiko" },
+          { id: idmsg, text: textSend, type: "me" },
+          ...arrayMsgHachi,
         ]);
-        setMaxId(value);
+
+        setMaxId(maxId + temp.length + 1);
         setLoader(false);
       });
   };
