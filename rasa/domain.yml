@@ -7,38 +7,18 @@ intents:
   - affirm
   - deny
   - bot_challenge
-  # - ask_pasillo
-  - tell_account_number
+  - ask_for_product
 entities:
-  - choice
-  # - producto
-  - account_number
+  - producto
+
 slots:
-  choice:
-    type: text
-    mappings:
-      - type: from_entity
-        entity: choice
-
-  # producto:
-  #   type: any
-  #   mappings:
-  #     - type: from_entity
-  #       entity: producto
-
-  account_number:
+  producto:
     type: any
     mappings:
       - type: from_entity
         entity: account_number
 
 responses:
-  utter_play:
-    - text: "Type 'rock', 'paper' or 'scissors' to play."
-
-  utter_play_again:
-    - text: "Do you want play again?"
-
   utter_goodbye:
     - text: "Bye"
 
@@ -53,9 +33,7 @@ responses:
 
 actions:
   - action_play_rps
-  # - action_response_product
-  - action_account_number
-  # - action_responder_producto
+  - action_answer_product
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
