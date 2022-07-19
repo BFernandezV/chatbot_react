@@ -9,73 +9,52 @@ nlu:
 
   - intent: greet
     examples: |
-      - hey
-      - hello
-      - hi
-      - good morning
-      - good evening
-      - hey there
+      - wena
       - hola
-      - que tal
+      - good morning
+      - buenas
+      - hola buenos días
+      - hola que tal
+      - hola buenas tardes
   - intent: goodbye
     examples: |
-      - bye
-      - goodbye
-      - see you around
-      - see you later
+      - nos vemos :)
+      - que tenga un buen día
+      - gracias, vuelva pronto
+      - adios :)
   - intent: affirm
     examples: |
       - correcto
       - si
       - claro
       - por supuesto
+      - ok
   - intent: deny
     examples: |
       - no
       - no gracias
       - eso es todo
-      - nada mas
+      - nada más
 
-  - intent: inform
+  - intent: ask_for_product
     examples: |
-      - [rock](choice)
-      - [paper](choice)
-      - [scissors](choice)
+      - Estoy buscando el pasillo de la [carne](producto)
+      - Estoy buscando el pasillo de los [carne](producto)
+      - Estoy buscando el pasillo del [carne](producto)
+      - Donde esta la [carne](producto)?
+      - Donde estan los [carne](producto)?
+      - Donde esta el [carne](producto)?
+      - Estoy en busca de la [carne](producto)
+      - Estoy en busca del [carne](producto)
+      - Estoy en busca de los [carne](producto)
+      - Necesito encontrar la [carne](producto)
+      - Necesito encontrar los [carne](producto)
+      - Necesito encontrar el [carne](producto)
+      - Cual es el pasillo de la [carne](producto)?
+      - Cual es el pasillo de los [carne](producto)?
+      - Cual es el pasillo del [carne](producto)?
 
-  # - intent: ask_pasillo
-  #   examples: |
-  #     - Estoy buscando el pasillo de la [Carne](producto)
-  #     - Estoy buscando el pasillo de los [Carne](producto)?
-  #     - Donde esta la [Carne] (producto)?
-  #     - Donde estan los [Carne] (producto)?
-  #     - Estoy buscando el pasillo de [Carne](producto)?
-  #     - Donde estan los articulos de [Carne] (producto)?
-  #     - Quiero un [Carne](producto)
-  #     - Quiero [Carne](producto)
-  #     - [Carne](producto)
-  #     - Estoy en busca de la [Carne]{"entity": "producto"}
-  #     - Cual es el pasillo de la [Carne]{"entity": "producto"}?
-  #     - Necesito encontrar la [Carne]{"entity": "producto"}
-
-  - intent: tell_account_number
-    examples: |
-      - Estoy buscando el pasillo de la [2313124213](account_number)
-      - Estoy buscando el pasillo de los [2313124213](account_number)
-      - Estoy buscando el pasillo del [2313124213](account_number)
-      - Donde esta la [2313124213](account_number)?
-      - Donde estan los [2313124213](account_number)?
-      - Donde esta el [2313124213](account_number)?
-      - Estoy en busca de la [2313124213](account_number)
-      - Estoy en busca del [2313124213](account_number)
-      - Estoy en busca de los [2313124213](account_number)
-      - Necesito encontrar la [2313124213](account_number)
-      - Necesito encontrar los [2313124213](account_number)
-      - Necesito encontrar el [2313124213](account_number)
-      - Cual es el pasillo de la [2313124213](account_number)?
-      - Cual es el pasillo de los [2313124213](account_number)?
-      - Cual es el pasillo del [2313124213](account_number)?
-
-  - regex: account_number
+  - regex: producto
     examples: |
       - la (.*)
       - los (.*)

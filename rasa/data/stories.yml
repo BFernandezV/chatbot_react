@@ -12,29 +12,28 @@ stories:
   #     - action: utter_play_again
   #     - intent: affirm
   #     - action: utter_play
-  # - story: don't play again
-  #   steps:
-  #     - action: utter_play_again
-  #     - intent: deny
-  #     - action: utter_goodbye
-  # - story: preguntar por producto
-  #   steps:
-  #     - intent: greet
-  #     - action: utter_bienvenida
-  #     - intent: ask_pasillo
-  #     - action: action_response_product
-  #     - action: utter_nueva_pregunta
-  # - story: preguntar nuevamente
-  #   steps:
-  #     - action: utter_nueva_pregunta
-  #     - intent: affirm
-  #     - action: utter_bienvenida
+
+  - story: preguntar por producto
+    steps:
+      - intent: greet
+      - action: utter_bienvenida
+      - intent: ask_for_product
+      - action: action_answer_product
+      - action: utter_nueva_pregunta
+
+  - story: preguntar nuevamente
+    steps:
+      - action: utter_nueva_pregunta
+      - intent: affirm
+      - action: utter_bienvenida
+
   - story: don't play again
     steps:
       - action: utter_nueva_pregunta
       - intent: deny
       - action: utter_goodbye
-  - story: tell account number
-    steps:
-      - intent: tell_account_number
-      - action: action_account_number
+
+  # - story: tell account number
+  #   steps:
+  #     - intent: ask_for_product
+  #     - action: action_answer_product
