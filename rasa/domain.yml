@@ -16,7 +16,7 @@ slots:
     type: any
     mappings:
       - type: from_entity
-        entity: account_number
+        entity: producto
 
 responses:
   utter_goodbye:
